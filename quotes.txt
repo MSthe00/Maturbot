@@ -1,0 +1,137 @@
+[client]
+default-character-set=utf8
+
+[mysql]
+default-character-set=utf8
+
+
+[mysqld]
+collation-server = utf8_unicode_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+
+
+deb http://ftp.us.debian.org/debian/ wheezy main non-free contrib
+
+deb http://packages.dotdeb.org wheezy all
+deb-src http://packages.dotdeb.org wheezy all
+
+deb http://packages.dotdeb.org wheezy-php56 all
+deb-src http://packages.dotdeb.org wheezy-php56 all
+
+
+87.245.96.175  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  04.01.17 08:55:51 PM
+80.218.129.108    03.05.17 09:39:15 PM
+80.219.11.195    03.05.17 09:39:29 PM
+80.218.129.108  80-218-129-108.dclient.hispeed.ch  03.05.17 09:48:41 PM
+80.218.129.108  80-218-129-108.dclient.hispeed.ch  03.05.17 09:48:44 PM
+80.218.129.108  80-218-129-108.dclient.hispeed.ch  03.05.17 09:49:00 PM
+95.238.23.239  host239-23-dynamic.238-95-r.retail.telecomitalia.it  03.05.17 11:49:09 PM
+95.238.23.239  host239-23-dynamic.238-95-r.retail.telecomitalia.it  03.05.17 11:49:14 PM
+93.238.246.19  p5deef613.dip0.t-ipconnect.de  03.06.17 12:02:28 AM
+93.238.246.19  p5deef613.dip0.t-ipconnect.de  03.06.17 12:02:29 AM
+113.162.163.209    03.06.17 01:51:36 AM
+80.179.204.186  80.179.204.186.cable.012.net.il  03.06.17 02:13:05 AM
+201.97.55.29  dup-201-97-55-29.prod-dial.com.mx  03.06.17 03:07:43 AM
+139.162.124.167  li1608-167.members.linode.com  03.06.17 03:17:12 AM
+217.42.154.6  host217-42-154-6.range217-42.btcentralplus.com  03.06.17 04:09:26 AM
+23.247.72.34    03.06.17 04:52:06 AM
+87.69.238.23    03.06.17 06:02:36 AM
+113.190.3.34  dynamic.vdc.vn  03.06.17 06:15:07 AM
+23.247.72.42    03.06.17 07:21:33 AM
+89.121.131.116    03.06.17 08:11:30 AM
+139.162.108.53  li1592-53.members.linode.com  03.06.17 08:43:35 AM
+94.63.143.59  59.143.63.94.rev.vodafone.pt  03.06.17 09:07:26 AM
+31.10.146.80    03.06.17 10:03:49 AM
+66.249.93.57  google-proxy-66-249-93-57.google.com  03.06.17 10:04:28 AM
+80.218.129.108  80-218-129-108.dclient.hispeed.ch  03.06.17 10:04:28 AM
+80.218.129.108  80-218-129-108.dclient.hispeed.ch  03.06.17 10:06:07 AM
+80.218.129.108  CH  03.06.17 10:15:54 AM
+104.196.163.157  CH  03.06.17 10:16:00 AM
+87.245.96.175  CH  03.06.17 10:16:00 AM
+46.126.33.36  CH  03.06.17 10:16:02 AM
+
+
+#See   31.10.146.80  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.22.17 10:15:01 PM
+Ich bin sehr konservativ.   194.230.159.136  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.27.17 08:46:03 AM
+Bi mir gaht's amis zwei Minute, wil ich bin bim erste Mal immer mega nerv�s   31.10.146.80  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.27.17 08:07:04 PM
+Bi mir gahts amigs zwei Minute, wil ich bin bim erste Mal immer mega nerv�s   31.10.146.80  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.27.17 08:08:41 PM
+Wir sind die J�ger, wir sind die J�ger!   87.245.96.175  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.27.17 09:03:05 PM
+&#45824;&#46041;&#44053;    31.10.146.80  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.27.17 09:34:48 PM
+Mittlerwili tr�nt sogar mini Nase!   194.230.155.120  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.28.17 02:54:34 PM
+M�nnerinnen   194.230.155.120  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.28.17 02:55:38 PM
+Hongkong gh�rt n�d zu China, oder Leute?    87.245.96.175  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.28.17 08:35:11 PM
+Eltere mit �   212.71.99.39  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.29.17 01:01:22 PM
+Wennd lihsch, stahsch ja eigentlich eif siitw�rts!   194.230.159.137  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.29.17 02:03:16 PM
+Mer kenned eus z guet   80.218.129.108  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  03.29.17 11:34:45 PM
+Erst wenn er d eier im muul hett isch er ganz tot!   194.230.159.232  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  04.01.17 01:35:38 AM
+Nei isch n�d nei   194.230.159.232  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  04.01.17 01:36:04 AM
+Montr�al mit i e h   194.230.155.104  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  04.03.17 12:08:41 PM
+Montr�al lieht n�d in Amerika   194.230.155.193  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  04.03.17 12:08:41 PM
+Es git sicher au es Montr�al in Kanada   194.230.155.193  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  04.03.17 12:09:26 PM
+Das isch sch�n wemmer chlini chind aficke chan   185.12.131.71  CH  Hochfelden  AS6830 Liberty Global Operations B.V.  04.03.17 03:53:58 PM
+De V�le isch starch pigmentiert   194.230.155.126  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.07.17 12:12:03 PM
+Wennd immer am lerne tuesch    87.245.96.175  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.07.17 08:58:00 PM
+
+181.222.76.43  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.08.17 01:06:42 PM
+185.6.154.17  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.08.17 03:27:00 PM
+91.210.107.60  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.08.17 04:17:56 PM
+84.180.105.24  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 03:24:25 AM
+209.126.136.2  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 04:48:59 AM
+139.162.114.70  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 09:32:40 AM
+82.125.188.44  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 10:49:08 AM
+66.249.93.139  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 11:59:09 AM
+80.219.11.195  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 12:03:02 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 12:09:05 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 12:12:32 PM
+192.168.0.19  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 03:36:01 PM
+192.168.0.19  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 03:36:01 PM
+80.219.11.195  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 04:08:19 PM
+220.134.248.217  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 04:51:53 PM
+27.76.205.96  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 04:54:12 PM
+
+   217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:42:39 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:48:19 PM
+testly   217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:48:33 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:48:41 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:49:32 PM
+testly2   217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:49:40 PM
+testly3   217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:50:50 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:50:54 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.09.17 08:51:14 PM
+
+103.54.45.4  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 06:08:45 PM
+110.90.95.163  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 08:31:56 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 08:47:57 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 08:48:03 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 08:48:24 PM
+31.10.146.80  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 10:37:30 PM
+Isch kein Diss gsi. Isch en Slap.   31.10.146.80  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 10:38:08 PM
+187.172.186.212  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 10:55:01 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:31:56 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:32:51 PM
+wddw   217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:32:56 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:33:02 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:35:43 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:38:10 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:38:15 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:38:50 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:39:08 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:39:13 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:39:27 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:39:31 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:39:33 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:40:21 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:40:24 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:40:27 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:40:31 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:40:32 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:40:34 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:06 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:10 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:11 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:14 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:16 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:18 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:21 PM
+217.162.146.34  CH  Winterthur  AS6830 Liberty Global Operations B.V.  04.15.17 11:41:36 PM
