@@ -2,7 +2,6 @@
 // Page to sign up or log in
 require 'db.php';
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +55,7 @@ if ($_SESSION['logged_in'] == 1) { //user is logged in and gets redirected to hi
 	<li style="float: right;"><a href="account.php" class="active">Account</a></li>
 </ul>
 
-
+<!-- User fills in values to sign in or register -->
 <h2>Anmelden</h2>
 <form action="account.php" method="post">
 <p>Username</p>
