@@ -8,7 +8,14 @@ Its features are
   - An account system
   - A Quote of the day
   
+  
 Some planned features are
   - A voting system
   - Account interaction
   - Better CSS
+  - More comments in the code
+
+
+Known bugs
+  - Repeat password doesnt work
+  - Verification email isnt sent out
