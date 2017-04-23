@@ -25,21 +25,21 @@ Known bugs:
   
   
 Changelog:
-  -1.3 (ETA 24.04.17)
+  - 1.3 (ETA 24.04.17)
 	- Voting System
 
-  -1.2 (20.04.17)
+  - 1.2 (20.04.17)
 	- Account System
 	- Submitter for Quotes
 	- New navbar CSS
 	- Felix approves
 	
-  -1.1 (idk)
+  - 1.1 (idk)
 	- CSS
 	- Quote of the day
 	- New Navigationsbar
 	
-  -1.0 (idk)
+  - 1.0 (idk)
 	- Input
 	- Verzeichniss
 	- Index
