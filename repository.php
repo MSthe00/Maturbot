@@ -60,6 +60,8 @@ tr:nth-child(even) {
 	    <th>Name</th>
 	    <th>Jahr</th> 
 	    <th>Quote</th>
+	    <th>Upgoat</th>
+	    <th>Downsevii</th>
   	</tr>
 	
 	<?php 
@@ -75,11 +77,13 @@ tr:nth-child(even) {
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
+			$uv = "<a href=/voter.php?id=".$row["id"]."&vtype=up>Upgoat</a>";
+			$dv = "<a href=/voter.php?id=".$row["id"]."&vtype=down>Downsevii</a>";
 			if ($row["w"]==1) {
-				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td></tr>";
+				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
 			else {
-				echo "<tr><td>".$row["w"]. "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td></tr>";
+				echo "<tr><td>".$row["w"]. "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
 		}
 	} else {
@@ -91,6 +95,6 @@ tr:nth-child(even) {
 	
 </table> <br> <br>
 
-	
+<a href="/index.php">Herro</a>
 </body>
 </html>
