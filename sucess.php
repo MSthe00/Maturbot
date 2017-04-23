@@ -31,7 +31,7 @@ session_start();
 </ul> <br>
 
 
-<h1>Error</h1>
+<h1>Sucess</h1>
 <p>
 <?php /* Print the message if its there */
 if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ): 
