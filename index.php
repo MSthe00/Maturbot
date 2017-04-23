@@ -45,10 +45,10 @@ if ($_SESSION['logged_in'] != 1) {
 </script>
 
 <ul>
-	<li><a href="index.php" class="active">Home</a></li>
-	<li><a href="input.php">Input</a></li>
-	<li><a href="repository.php">Verzeichnis</a></li>
-	<li style="float: right;"><a href="account.php" >Account</a></li>
+	<li><a href="index.php" class="nactive">Home</a></li>
+	<li><a href="input.php" class="nav">Input</a></li>
+	<li><a href="repository.php" class="nav">Verzeichnis</a></li>
+	<li style="float: right;"><a href="account.php" class="nav">Account</a></li>
 </ul>
 
 

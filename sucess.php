@@ -24,10 +24,10 @@ session_start();
 </script>
 
 <ul>
-	<li><a href="index.php">Home</a></li>
-	<li><a href="input.php">Input</a></li>
-	<li><a href="repository.php">Verzeichnis</a></li>
-	<li style="float: right;"><a href="account.php" >Account</a></li>
+	<li><a href="index.php" class="nav">Home</a></li>
+	<li><a href="input.php" class="nav">Input</a></li>
+	<li><a href="repository.php" class="nav">Verzeichnis</a></li>
+	<li style="float: right;"><a href="account.php" class="nav">Account</a></li>
 </ul> <br>
 
 

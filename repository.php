@@ -28,6 +28,42 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+
+<?php 
+if($_SESSION["logged_in"] !=1 ){ // User not logged in
+	$_SESSION['message'] = "Bitte logge dich ein oder registriere dich, um auf das Verzeichnis zuzugreifen";
+	header("location: error.php");
+} else { // User logged in proceed
+	$usrn = $_SESSION['username'];
+
+	$sql = "SELECT * FROM votes WHERE voter = '$usrn'";
+	$result = $conn->query($sql);
+	
+	while($row = $result->fetch_assoc()) { // returns each row
+
+		if ($row['type']==1){ // updoot
+			
+			echo "a.u".$row['qid'].", ";
+			
+		} else { //downdoot
+			
+			echo "a.d".$row['qid'].", ";
+			
+		}
+	}
+		echo "a.throwaway";
+}
+?> {
+    background-color: lightgreen;
+}
+
+a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
+    display: block;
+    color: black;
+    padding: 7px 8px;
+    text-decoration: none;
+}
 </style>
 
 </head>
@@ -45,16 +81,13 @@ tr:nth-child(even) {
 
 
 <ul>
-	<li><a href="index.php">Home</a></li>
-	<li><a href="input.php">Input</a></li>
-	<li><a href="repository.php" class="active">Verzeichnis</a></li>
-	<li style="float: right;"><a href="account.php" >Account</a></li>
+	<li><a href="index.php" class="nav">Home</a></li>
+	<li><a href="input.php" class="nav">Input</a></li>
+	<li><a href="repository.php" class="nactive">Verzeichnis</a></li>
+	<li style="float: right;"><a href="account.php" class="nav">Account</a></li>
 </ul>
 
-<?php if($_SESSION["logged_in"] !=1 ){
-	echo "<h1 style=\"color:red\">Warnung, sie sind nicht angemeldet und können somit nicht voten</h1>";
-}
-	?>
+
 <h2>Verzeichnis</h2>
 
 <table>
@@ -63,8 +96,9 @@ tr:nth-child(even) {
 	    <th>Name</th>
 	    <th>Jahr</th> 
 	    <th>Quote</th>
-	    <th>Upgoat</th>
-	    <th>Downsevii</th>
+	    <th>Votes</th>
+	    <th>Upvote</th>
+	    <th>Downvote</th>
   	</tr>
 	
 	<?php 
@@ -80,13 +114,13 @@ tr:nth-child(even) {
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			$uv = "<a href=/voter.php?id=".$row["id"]."&vtype=up>Upgoat</a>";
-			$dv = "<a href=/voter.php?id=".$row["id"]."&vtype=down>Downsevii</a>";
+			$uv = "<a class=\"u".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=up>Upvote</a>";
+			$dv = "<a class=\"d".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=down>Downvote</a>";
 			if ($row["w"]==1) {
-				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$uv."</td><td>".$dv."</td></tr>";
+				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
 			else {
-				echo "<tr><td>".$row["w"]. "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$uv."</td><td>".$dv."</td></tr>";
+				echo "<tr><td>".$row["w"]. "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
 		}
 	} else {

@@ -37,10 +37,10 @@ if ($_SESSION['logged_in'] != 1) { //user isn't logged in and gets redirected to
 
 
 <ul>
-	<li><a href="index.php">Home</a></li>
-	<li><a href="input.php">Input</a></li>
-	<li><a href="repository.php">Verzeichnis</a></li>
-	<li style="float: right;"><a href="account.php" class="active">Account</a></li>
+	<li><a href="index.php" class="nav">Home</a></li>
+	<li><a href="input.php" class="nav">Input</a></li>
+	<li><a href="repository.php" class="nav">Verzeichnis</a></li>
+	<li style="float: right;"><a href="account.php" class="nactive">Account</a></li>
 </ul>
 
 
