@@ -51,7 +51,10 @@ tr:nth-child(even) {
 	<li style="float: right;"><a href="account.php" >Account</a></li>
 </ul>
 
-
+<?php if($_SESSION["logged_in"] !=1 ){
+	echo "<h1 style=\"color:red\">Warnung, sie sind nicht angemeldet und können somit nicht voten</h1>";
+}
+	?>
 <h2>Verzeichnis</h2>
 
 <table>

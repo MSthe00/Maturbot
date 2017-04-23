@@ -34,7 +34,7 @@ session_start();
 
 
 <?php if($_SESSION["logged_in"] !=1 ){
-	echo "<h1 style=\"color:red\">Warnung, sie sind nicht angemeldet</h1>";
+	echo "<h1 style=\"color:red\">Warnung, sie sind nicht angemeldet und können somit keine Quotes eintragen</h1>";
 }
 	?>
 	
