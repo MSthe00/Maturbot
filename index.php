@@ -82,9 +82,10 @@ $conn->close();
 <p>PHP Version: <?php  echo phpversion(); ?></p>
 <p>Registrierte Nutzer: <?php echo $user_cnt;?></p>
 <p>~800 Zeilen Code</p>
-<p>Current Version 1.2</p>
+<p>Current Version 1.3</p>
 
 <h2>News</h2>
+<p>24.04.17: Votesystem ist fertig</p>
 <p>23.04.17: Beginn der Arbeit am Votesystem</p>
 <p>20.04.17: Accountsystem ist fertig</p>
 <p>18.04.17: Encodings sind scheisse</p>

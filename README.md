@@ -1,4 +1,4 @@
-# Quotebot v1.2
+# Quotebot v1.3
 
 This is my code for a Website where you can add and manage quotes.
 It is built using MySQL, PHP, HTML and a bit of CSS and JS.
@@ -25,8 +25,9 @@ Known bugs:
   
   
 Changelog:
-  - 1.3 (ETA 24.04.17)
+  - 1.3 (24.04.17)
 	- Voting System
+	- Votecount for quotes
 
   - 1.2 (20.04.17)
 	- Account System
