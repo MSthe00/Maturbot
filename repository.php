@@ -63,6 +63,8 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
     color: black;
     padding: 7px 8px;
     text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
 }
 </style>
 
@@ -120,7 +122,7 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
 			else {
-				echo "<tr><td>".$row["w"]. "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
+				echo "<tr><td>"."🅱️". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
 		}
 	} else {
@@ -132,6 +134,5 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 	
 </table> <br> <br>
 
-<a href="/index.php">Herro</a>
 </body>
 </html>
