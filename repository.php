@@ -2,6 +2,11 @@
 // A repository with all Quotes
 require 'db.php';
 session_start();
+
+// use votes.php if necessairy
+if (isset($_GET[id], $_GET['vtype'])){ // User accesses script the intended way;
+	require 'voter.php';
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +37,12 @@ tr:nth-child(even) {
 
 <?php 
 if($_SESSION["logged_in"] !=1 ){ // User not logged in
+	
 	$_SESSION['message'] = "Bitte logge dich ein oder registriere dich, um auf das Verzeichnis zuzugreifen";
 	header("location: error.php");
+	
 } else { // User logged in proceed
+	
 	$usrn = $_SESSION['username'];
 
 	$sql = "SELECT * FROM votes WHERE voter = '$usrn'";
@@ -116,8 +124,8 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			$uv = "<a class=\"u".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=up>Upvote</a>";
-			$dv = "<a class=\"d".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=down>Downvote</a>";
+			$uv = "<a class=\"u".$row['id']."\" href=/repository.php?id=".$row["id"]."&vtype=up onclick=\"keepScroll();\">Upvote</a>";
+			$dv = "<a class=\"d".$row['id']."\" href=/repository.php?id=".$row["id"]."&vtype=down onclick=\"keepScroll();\">Downvote</a>";
 			if ($row["w"]==1) {
 				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
@@ -133,6 +141,34 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 	?>
 	
 </table> <br> <br>
+
+
+<script type="text/javascript">
+
+function keepScroll() { // store the users scroll amount
+	document.cookie = "scrollPos = "+window.pageYOffset+";";
+}
+
+function restorePosition() { // store the users scroll amount
+	if (document.cookie.indexOf("scrollPos") >= 0) {
+		var sPos = getCookie("scrollPos");
+		window.scrollTo(0, sPos);
+	}
+}
+
+function getCookie(name){
+    var pattern = RegExp(name + "=.[^;]*")
+    matched = document.cookie.match(pattern)
+    if(matched){
+        var cookie = matched[0].split('=')
+        return cookie[1]
+    }
+    return false
+}
+
+restorePosition();
+</script>
+
 
 </body>
 </html>
