@@ -63,7 +63,7 @@ $sql = "SELECT * FROM quotes";
 $result = $conn->query($sql);
 $quote_cnt = $result->num_rows;
 srand(date("Ymd"));
-$wahl = rand(0,$row_cnt);
+$wahl = rand(0,$quote_cnt);
 for ($x = 0; $x <= $wahl; $x++) {
 	$row = $result->fetch_assoc();
 }
