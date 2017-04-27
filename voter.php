@@ -17,7 +17,7 @@ session_start();
 				$vtype = -1;
 			} else { //GTFO
 				$_SESSION['message'] = "Sie haben die Voteverarbeitungsseite ohne benötigte Parameter besucht";
-				//header("location: error.php");
+				header("location: error.php");
 			}
 			
 			// check if the user already voted on this
@@ -34,7 +34,7 @@ session_start();
 				// Add a vote to the Quote
 				$bsql = "UPDATE quotes SET votes = votes + '$vtype' where id = '$qid'";
 				$conn->query($bsql);
-				//header("location: repository.php");
+				header("location: repository.php");
 				
 			} else {
 				$exvote = $result->fetch_assoc();
@@ -47,7 +47,7 @@ session_start();
 					// removethe vote
 					$bsql = "UPDATE quotes SET votes = votes - '$vtype' where id = '$qid'";
 					$conn->query($bsql);
-					//header("location: repository.php");
+					header("location: repository.php");
 					
 				} elseif ($exvote['type'] == -1*$vtype) { // user has already voted the  other way
 					
@@ -59,7 +59,7 @@ session_start();
 					// Add a vote to the Quote
 					$bsql = "UPDATE quotes SET votes = votes + 2*'$vtype' where id = '$qid'";
 					$conn->query($bsql);
-					//header("location: repository.php");
+					header("location: repository.php");
 					
 				}
 			}

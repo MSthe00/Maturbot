@@ -69,11 +69,23 @@ for ($x = 0; $x <= $wahl; $x++) {
 }
 echo $row["name"]." ". $row["jahr"]." - ". $row["quote"]."<br>";
 
+
 // Preparing for statistics
+
+// Users
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 $user_cnt = $result->num_rows;
 $conn->close();
+
+// count quoted
+function getQuotesCount(string $qname) {
+	echo $qname;
+	$sql = "SELECT COUNT(*) FROM quotes WHERE name = '$qname'";
+	$result = $conn->query($sql);
+	return $result;
+}
+
 ?>
 
 

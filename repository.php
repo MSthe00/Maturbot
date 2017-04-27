@@ -4,9 +4,7 @@ require 'db.php';
 session_start();
 
 // use votes.php if necessairy
-if (isset($_GET[id], $_GET['vtype'])){ // User accesses script the intended way;
-	require 'voter.php';
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -118,14 +116,14 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$sql = "SELECT * FROM quotes";
+	$sql = "SELECT * FROM quotes ORDER BY votes DESC, id DESC";
 	$result = $conn->query($sql);
 	
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			$uv = "<a class=\"u".$row['id']."\" href=/repository.php?id=".$row["id"]."&vtype=up onclick=\"keepScroll();\">Upvote</a>";
-			$dv = "<a class=\"d".$row['id']."\" href=/repository.php?id=".$row["id"]."&vtype=down onclick=\"keepScroll();\">Downvote</a>";
+			$uv = "<a class=\"u".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=up onclick=\"keepScroll();\">Upvote</a>";
+			$dv = "<a class=\"d".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=down onclick=\"keepScroll();\">Downvote</a>";
 			if ($row["w"]==1) {
 				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
@@ -153,6 +151,7 @@ function restorePosition() { // store the users scroll amount
 	if (document.cookie.indexOf("scrollPos") >= 0) {
 		var sPos = getCookie("scrollPos");
 		window.scrollTo(0, sPos);
+		document.cookie = "scrollPos=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 	}
 }
 
