@@ -1,6 +1,6 @@
 <?php
 // Registers the user in after he fills the form out. Redirects user to his profile or an error page
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 echo "Sie stecken im Registrierungsvorgang. De Marco het öppis versaut.";
 

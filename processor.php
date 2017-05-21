@@ -1,6 +1,6 @@
 <?php
 // Processing new Quotes
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 ?>
 
@@ -58,14 +58,14 @@ if ($_SESSION['logged_in'] == 1){
 		header("location: error.php");	
 	}
 	
-	$sql = "INSERT INTO quotes (name, jahr, quote, w, submitter, t)
-	VALUES ('$n', '$j', '$q', '$s', '$sub', 0)";
+	$sql = "INSERT INTO quotes (name, jahr, quote, w, submitter)
+	VALUES ('$n', '$j', '$q', '$s', '$sub')";
 	if ($conn->query($sql) === TRUE) {
 		$sql2 = "SELECT * FROM quotes";
 		$result = $conn->query($sql2);
 		$row_cnt = $result->num_rows;
 		$_SESSION['message'] = "<p>Eingereicht von $sub </p> <p>Name: $n </p> <p>Jahr: $j </p> <p> Quote: $q </p>";
-		header("location: sucess.php");	
+		header("location: success.php");	
 	} else {
 		$_SESSION['message'] = "Error: " . $sql . "<br>" . $conn->error;
 		header("location: error.php");	

@@ -1,6 +1,6 @@
 <?php 
 // A repository with all Quotes
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 
 // use votes.php if necessairy
@@ -116,7 +116,7 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$sql = "SELECT * FROM quotes ORDER BY votes DESC, id DESC";
+	$sql = "SELECT * FROM quotes ORDER BY id DESC";
 	$result = $conn->query($sql);
 	
 	if ($result->num_rows > 0) {

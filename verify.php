@@ -2,7 +2,7 @@
 /* Verifies registered user email, the link to this page
    is included in the register.php email message 
 */
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 
 // Make sure email and hash variables aren't empty

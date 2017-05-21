@@ -1,5 +1,5 @@
 <?php 
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 ?>
 

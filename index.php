@@ -1,6 +1,6 @@
 <?php
 //Index page as a hub
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 
 // Restoring account if cookies are set
@@ -63,7 +63,7 @@ $sql = "SELECT * FROM quotes";
 $result = $conn->query($sql);
 $quote_cnt = $result->num_rows;
 srand(date("Ymd"));
-$wahl = rand(0,$quote_cnt);
+$wahl = rand(0, $quote_cnt);
 for ($x = 0; $x <= $wahl; $x++) {
 	$row = $result->fetch_assoc();
 }
@@ -76,14 +76,14 @@ echo $row["name"]." ". $row["jahr"]." - ". $row["quote"]."<br>";
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 $user_cnt = $result->num_rows;
-$conn->close();
 
 // count quoted
-function getQuotesCount(string $qname) {
-	echo $qname;
-	$sql = "SELECT COUNT(*) FROM quotes WHERE name = '$qname'";
+function getQuotesCount($qname) {
+	require 'db.php';
+	$sql = "SELECT * FROM quotes WHERE name='$qname'";
 	$result = $conn->query($sql);
-	return $result;
+	$qrows = $result->num_rows;
+	return $qrows;
 }
 
 ?>
@@ -93,6 +93,7 @@ function getQuotesCount(string $qname) {
 <p>Anzahl Quotes: <?php echo $quote_cnt;?></p>
 <p>PHP Version: <?php  echo phpversion(); ?></p>
 <p>Registrierte Nutzer: <?php echo $user_cnt;?></p>
+<p>Anzahl Seviiquotes: <?php echo getQuotesCount("Sevii");?>
 <p>~800 Zeilen Code</p>
 <p>Current Version 1.3</p>
 

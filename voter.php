@@ -1,6 +1,6 @@
 <?php 
 // Users vote gets processed
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 
 ?>
@@ -34,6 +34,10 @@ session_start();
 				// Add a vote to the Quote
 				$bsql = "UPDATE quotes SET votes = votes + '$vtype' where id = '$qid'";
 				$conn->query($bsql);
+				
+				// Add a vote to the votecount of the user
+				$bsql = "UPDATE users SET votes = votes + 1 where username = '".$_SESSION['username']."'";
+				$conn->query($bsql);
 				header("location: repository.php");
 				
 			} else {
@@ -44,10 +48,16 @@ session_start();
 					$sql = "DELETE FROM votes WHERE voter = '$usrn' and qid = '$qid'";
 					$conn->query($sql);
 					
-					// removethe vote
+					// remove the vote
 					$bsql = "UPDATE quotes SET votes = votes - '$vtype' where id = '$qid'";
 					$conn->query($bsql);
+					
+					// remove the vote count from the user
+					$bsql = "UPDATE users SET votes = votes - 1 where username = '".$_SESSION['username']."'";
+					$conn->query($bsql);
 					header("location: repository.php");
+					
+
 					
 				} elseif ($exvote['type'] == -1*$vtype) { // user has already voted the  other way
 					

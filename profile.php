@@ -1,6 +1,6 @@
 <?php 
 // User sees his account
-require 'db.php';
+require '../backendnogit/db.php';
 session_start();
 
 ?>

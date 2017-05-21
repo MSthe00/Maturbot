@@ -14,10 +14,9 @@ Its features are:
   
   
 Some planned features are:
-  - Account interaction
   - Better CSS
   - More comments in the code
-
+  - Pie chart statistics
 
 Known bugs:
   - Repeat password doesnt work
