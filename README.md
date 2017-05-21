@@ -16,12 +16,12 @@ Its features are:
 Some planned features are:
   - Better CSS
   - More comments in the code
-  - Pie chart statistics
+  - Fancy statistics
+  - A quiz modes
 
 Known bugs:
-  - Repeat password doesnt work
-  - Verification email isnt sent out
-  
+  - Verification process doesnt even remotely work because PHP emails are cancer
+  - There is no Password reset and there wont be one because PHP emails are cancer
   
 Changelog:
   - 1.3 (24.04.17)

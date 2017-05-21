@@ -79,7 +79,7 @@ $user_cnt = $result->num_rows;
 
 // count quoted
 function getQuotesCount($qname) {
-	require 'db.php';
+	require '../backendnogit/db.php';
 	$sql = "SELECT * FROM quotes WHERE name='$qname'";
 	$result = $conn->query($sql);
 	$qrows = $result->num_rows;
@@ -102,8 +102,12 @@ function getQuotesCount($qname) {
 <p>23.04.17: Beginn der Arbeit am Votesystem</p>
 <p>20.04.17: Accountsystem ist fertig</p>
 <p>18.04.17: Encodings sind scheisse</p>
-<br><br>
 
+<h2>Geplante features</h2>
+<p>Sortierung für Verzeichniss</p>
+<p>Quiz Minigame</p>
+
+<br><br>
 <p id="winfo">Mit dem weiteren Benutzen dieser Website stimmen sie zu, dass Cookies gespeichert werden.</p>
 </body>
 
