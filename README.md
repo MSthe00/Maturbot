@@ -2,6 +2,7 @@
 
 This is my code for a Website where you can add and manage quotes.
 It is built using MySQL, PHP, HTML and a bit of CSS and JS.
+It currently runs on a Apache2 Server on a RaspberryPi
 
 
 Its features are:
@@ -11,18 +12,21 @@ Its features are:
   - A Quote of the day
   - A voting system  
   - Some statistics
-  
-  
+
+
 Some planned features are:
   - Better CSS
-  - More comments in the code
   - Fancy statistics
   - A quiz modes
 
 Known bugs:
   - Verification process doesnt even remotely work because PHP emails are cancer
-  - There is no Password reset and there wont be one because PHP emails are cancer
+  - There is no password reset and there wont be one because PHP emails are cancer
   
+Security Threats
+  - There are many easy SQL injections possible
+  - There is no HTTPS
+
 Changelog:
   - 1.3 (24.04.17)
 	- Voting System
