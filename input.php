@@ -33,7 +33,7 @@ session_start();
 </ul>
 
 
-<?php if($_SESSION["logged_in"] !=1 ){
+<?php if($_SESSION["logged_in"] !=1 ){ // Users that arent logged in get a warning since this page is useless to them
 	echo "<h1 style=\"color:red\">Warnung, sie sind nicht angemeldet und können somit keine Quotes eintragen</h1>";
 }
 	?>

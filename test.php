@@ -1,1 +1,4 @@
-<?php phpinfo(); ?>
+<?php 
+// I help if there are Serversoftware Problems
+phpinfo(); 
+?>

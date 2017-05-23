@@ -1,4 +1,5 @@
 <?php 
+// A changelog like the one on Github
 require '../backendnogit/db.php';
 session_start();
 ?>

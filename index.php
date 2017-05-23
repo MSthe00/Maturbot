@@ -5,12 +5,16 @@ session_start();
 
 // Restoring account if cookies are set
 if ($_SESSION['logged_in'] != 1) {
-	if (isset($_COOKIE['uhash']) and isset($_COOKIE['uid'])) {
+	if (isset($_COOKIE['uhash']) and isset($_COOKIE['uid'])) { // Restorecookies are set
+		
+		// Check the cookies
 		$uid = $_COOKIE['uid'];
 		$uhash = $_COOKIE['uhash'];
+		
 		$sql = "SELECT * FROM users WHERE hash = '$uhash' AND id = '$uid'";
 		$result = $conn->query($sql);
-		if ( $result->num_rows == 1 ){
+		
+		if ( $result->num_rows == 1 ){ // Cookies are correct, log in
 			$user = $result->fetch_assoc();
 			$_SESSION['email'] = $user['email'];
 			$_SESSION['username'] = $user['username'];
@@ -55,14 +59,16 @@ if ($_SESSION['logged_in'] != 1) {
 <h2>Quote of the day</h2>
 
 <?php
+
 // New random Quote every day
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-}
+
+// Get the quote count
 $sql = "SELECT * FROM quotes";
 $result = $conn->query($sql);
 $quote_cnt = $result->num_rows;
-srand(date("Ymd"));
+
+// Chose a random Quote every day
+srand(date("Ymd")); // Seed the rand() function
 $wahl = rand(0, $quote_cnt);
 for ($x = 0; $x <= $wahl; $x++) {
 	$row = $result->fetch_assoc();

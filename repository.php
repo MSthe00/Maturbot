@@ -121,10 +121,11 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 	
 	if ($result->num_rows > 0) {
 		// output data of each row
-		while($row = $result->fetch_assoc()) {
+		while($row = $result->fetch_assoc()) { // up and downvotes get a different link
 			$uv = "<a class=\"u".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=up onclick=\"keepScroll();\">Upvote</a>";
 			$dv = "<a class=\"d".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=down onclick=\"keepScroll();\">Downvote</a>";
-			if ($row["w"]==1) {
+			
+			if ($row["w"]==1) { // Literal quote
 				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
 			}
 			else {
@@ -143,11 +144,11 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 
 <script type="text/javascript">
 
-function keepScroll() { // store the users scroll amount
+function keepScroll() { // save the users scroll amount
 	document.cookie = "scrollPos = "+window.pageYOffset+";";
 }
 
-function restorePosition() { // store the users scroll amount
+function restorePosition() { // restore the users scroll amount
 	if (document.cookie.indexOf("scrollPos") >= 0) {
 		var sPos = getCookie("scrollPos");
 		window.scrollTo(0, sPos);

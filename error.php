@@ -34,7 +34,7 @@ session_start();
 
 <h1>Error</h1>
 <p>
-<?php /* Print the message if its there */
+<?php // Print the error message if there is one
 if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ): 
     echo $_SESSION['message'];    
 else:

@@ -7,7 +7,7 @@ session_start();
 <html>
 <head>
 
-<title>Sucess</title>
+<title>Success</title>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 
 </head>
@@ -33,7 +33,7 @@ session_start();
 
 <h1>Sucess</h1>
 <p>
-<?php /* Print the message if its there */
+<?php // Show the success message
 if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ): 
     echo $_SESSION['message'];    
 else:
