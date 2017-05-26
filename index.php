@@ -110,11 +110,11 @@ function getQuotesCount($qname) {
 <p>18.04.17: Encodings sind scheisse</p>
 
 <h2>Geplante features</h2>
-<p>Sortierung für Verzeichniss</p>
+<p>Sortierung für Verzeichnis</p>
 <p>Quiz Minigame</p>
 
 <br><br>
-<p id="winfo">Mit dem weiteren Benutzen dieser Website stimmen sie zu, dass Cookies gespeichert werden.</p>
+<p id="winfo">Mit dem weiteren Benutzen dieser Website stimmen Sie zu, dass Cookies gespeichert werden.</p>
 </body>
 
 </html>
