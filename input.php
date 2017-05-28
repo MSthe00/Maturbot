@@ -37,9 +37,6 @@ session_start();
 	echo "<h1 style=\"color:red\">Warnung, sie sind nicht angemeldet und können somit keine Quotes eintragen</h1>";
 }
 	?>
-	
-	
-<h2>Input Fenster</h2>
 
 <form action="processor.php" method="post">
 

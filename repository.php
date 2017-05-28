@@ -87,24 +87,20 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
   ga('send', 'pageview');
 </script>
 
-
 <ul>
 	<li><a href="index.php" class="nav">Home</a></li>
 	<li><a href="input.php" class="nav">Input</a></li>
 	<li><a href="repository.php" class="nactive">Verzeichnis</a></li>
 	<li style="float: right;"><a href="account.php" class="nav">Account</a></li>
-</ul>
+</ul> <br> <br>
 
-
-<h2>Verzeichnis</h2>
-
-<table>
+<table id="quotes">
 	<tr>
 		<th></th>
-	    <th>Name</th>
-	    <th>Jahr</th> 
-	    <th>Quote</th>
-	    <th>Votes</th>
+	    <th onclick="sortTable(1)">Name</th>
+	    <th onclick="sortId(5)">Jahr</th> 
+	    <th onclick="sortTable(3)">Quote</th>
+	    <th onclick="sortTable(4)">Votes</th>
 	    <th>Upvote</th>
 	    <th>Downvote</th>
   	</tr>
@@ -124,12 +120,18 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 		while($row = $result->fetch_assoc()) { // up and downvotes get a different link
 			$uv = "<a class=\"u".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=up onclick=\"keepScroll();\">Upvote</a>";
 			$dv = "<a class=\"d".$row['id']."\" href=/voter.php?id=".$row["id"]."&vtype=down onclick=\"keepScroll();\">Downvote</a>";
+			$idRow = "<td style=\"display:;\">".$row['id']."</td>";
 			
 			if ($row["w"]==1) { // Literal quote
-				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
+				echo "<tr><td style=\"padding: 0px;\">"."<img src=\"felixverdruckt.png\" height=\"40px\" width=\"40px\">".
+				"</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes'].
+				"</td>".$idRow."<td>".$uv."</td><td>".$dv."</td></tr>
+				";
 			}
 			else {
-				echo "<tr><td>"."🅱️". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"]. "</td><td>".$row['votes']."</td><td>".$uv."</td><td>".$dv."</td></tr>";
+				echo "<tr><td>"."🅱️". "</td><td>" . $row["name"]. "</td><td>" . $row["jahr"] . "</td><td>" .  $row["quote"].
+				"</td><td>".$row['votes']."</td>".$idRow."<td>".$uv."</td><td>".$dv."</td></tr>
+				";
 			}
 		}
 	} else {
@@ -144,6 +146,7 @@ a:link:not(.nactive):not(.nav), a:visited:not(.nactive):not(.nav) {
 
 <script type="text/javascript">
 
+// Scroll Scripts
 function keepScroll() { // save the users scroll amount
 	document.cookie = "scrollPos = "+window.pageYOffset+";";
 }
@@ -167,6 +170,121 @@ function getCookie(name){
 }
 
 restorePosition();
+
+
+// Sorting Script
+
+function sortTable(n) { //Taken from W3schools.com
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("quotes");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++; 
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+
+function sortId(n) {//Taken from W3schools.com
+
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("quotes");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (parseFloat(x.innerHTML) > parseFloat(y.innerHTML)) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (parseFloat(x.innerHTML) < parseFloat(y.innerHTML)) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++; 
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+
 </script>
 
 
