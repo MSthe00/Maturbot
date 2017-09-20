@@ -1,0 +1,39 @@
+/* Mobile first*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+.txtcntr {
+	text-align: center;
+}
+
+
+.mdl-cell {border: 1px solid red;}
+
+
+
+@media only screen and (min-width: 600px) {
+    /* For tablets */
+	
+
+
+
+}
+
+	
+
+
+	
+
+
+@media only screen and (max-width: 1430px) {
+	
+	.lowhide {
+		display: none;
+	}
+
+}
+
+

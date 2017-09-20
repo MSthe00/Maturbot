@@ -1,7 +1,7 @@
-# Quotebot v1.3
+# Quotebot v1.4
 
 This is my code for a Website where you can add and manage quotes.
-It is built using MySQL, PHP, HTML and a bit of CSS and JS.
+It is built using MySQL, PHP, HTML, CSS and JS.
 It currently runs on a Apache2 Server on a RaspberryPi
 
 
@@ -12,22 +12,30 @@ Its features are:
   - A Quote of the day
   - A voting system  
   - Some statistics
+  - Material Design
 
 
 Some planned features are:
-  - Better CSS
   - Fancy statistics
   - A quiz modes
+  - Profile info in header
+  - Photos
 
 Known bugs:
-  - Verification process doesnt even remotely work because PHP emails are cancer
-  - There is no password reset and there wont be one because PHP emails are cancer
+  - Repeat password is broken
+  - Scrollkeeping is broken because pageYOffset doesnt work on material tables
   
 Security Threats
   - There are many easy SQL injections possible
   - There is no HTTPS
+  - Passwords aren't salted
 
 Changelog:
+  - 1.4 (30.08.17)
+  	- Repository sorting
+  	- Redesigned Material CSS
+  	- Redesigned desktop page
+
   - 1.3 (24.04.17)
 	- Voting System
 	- Votecount for quotes

@@ -1,5 +1,6 @@
 <?php
 // Logs the user in after he fills the form out. Redirects user to his profile or an error page
+
 require '../backendnogit/db.php';
 session_start();
 echo "Sie stecken im Anmeldevorgang. De Marco het öppis versaut.";
@@ -39,6 +40,3 @@ else { // User exists
 }
 
 ?>
-</body>
-
-</html>

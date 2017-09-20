@@ -10,8 +10,12 @@ session_start();
 <head>
 
 <title>Profil</title>
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-blue.min.css" /> 
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body>
 
@@ -36,24 +40,55 @@ if ($_SESSION['logged_in'] != 1) { //user isn't logged in and gets redirected to
 ?>
 
 
-<ul>
-	<li><a href="index.php" class="nav">Home</a></li>
-	<li><a href="input.php" class="nav">Input</a></li>
-	<li><a href="repository.php" class="nav">Verzeichnis</a></li>
-	<li style="float: right;"><a href="account.php" class="nactive">Account</a></li>
-</ul>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Account</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="quotebot.php">Home</a>
+      <a class="mdl-navigation__link mdl-cell--hide-desktop" href="input.php">Input</a>
+      <a class="mdl-navigation__link" href="repository.php">Verzeichnis</a>
+      <a class="mdl-navigation__link" href="account.php">Account</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Account</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="quotebot.php">Home</a>
+      <a class="mdl-navigation__link" href="input.php">Input</a>
+      <a class="mdl-navigation__link" href="repository.php">Verzeichnis</a>
+      <a class="mdl-navigation__link" href="account.php">Account</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+		<br>
 
-
-<h2>Mein Profil</h2>
-
-<p>Email: <?php  echo $_SESSION['email']; ?> </p>
-
-<p>Username: <?php echo $_SESSION['username']; ?> </p>
-
-<p>Votes: <?php echo $_SESSION['votes']; ?> </p>
-<br><br>
-
-<a href="logout.php"><button class="button button-block" name="logout"/>Log Out</button></a>
+		<div class="mdl-card mdl-shadow--2dp" style="margin-left:auto;margin-right:auto;">
+		  <div class="mdl-card__title mdl-card--expand" style="background: #ff5722 center / cover;">
+		    <h2 class="mdl-card__title-text" style="color: #fff;">Mein Profil</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		
+		<p>Email: <?php  echo $_SESSION['email']; ?> </p>
+		
+		<p>Username: <?php echo $_SESSION['username']; ?> </p>
+		
+		<p>Votes: <?php echo $_SESSION['votes']; ?> </p>
+		  
+		  
+		
+		<a href="http://maturbot.ddns.net/scripts/qbphp/logout.php"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" name="logout"/>Log Out</button></a>
+		</div>
+		</div>
+	  </div>
+	</main>
+</div>
 
 </body>
 </html>

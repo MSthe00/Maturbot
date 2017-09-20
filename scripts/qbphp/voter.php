@@ -1,6 +1,6 @@
 <?php 
 // Users vote gets processed
-require '../backendnogit/db.php';
+require '../../../backendnogit/db.php';
 session_start();
 
 ?>
@@ -38,7 +38,11 @@ session_start();
 				// Add a vote to the votecount of the user
 				$bsql = "UPDATE users SET votes = votes + 1 where username = '".$_SESSION['username']."'";
 				$conn->query($bsql);
-				header("location: repository.php");
+				if (strpos($_SERVER['HTTP_REFERER'], repository)) {
+					header("location: http://maturbot.ddns.net/repository.php");
+				} else {
+					header("location: http://maturbot.ddns.net/dquotebot.php");
+				}
 				
 			} else {
 				$exvote = $result->fetch_assoc();
@@ -55,7 +59,11 @@ session_start();
 					// remove the vote count from the user
 					$bsql = "UPDATE users SET votes = votes - 1 where username = '".$_SESSION['username']."'";
 					$conn->query($bsql);
-					header("location: repository.php");
+					if (strpos($_SERVER['HTTP_REFERER'], repository)) {
+						header("location: http://maturbot.ddns.net/repository.php");
+					} else {
+						header("location: http://maturbot.ddns.net/dquotebot.php");
+					}
 					
 
 					
@@ -69,7 +77,13 @@ session_start();
 					// Add a vote to the Quote
 					$bsql = "UPDATE quotes SET votes = votes + 2*'$vtype' where id = '$qid'";
 					$conn->query($bsql);
-					header("location: repository.php");
+					
+					if (strpos($_SERVER['HTTP_REFERER'], repository)) {
+						header("location: http://maturbot.ddns.net/repository.php");
+					} else {
+						header("location: http://maturbot.ddns.net/dquotebot.php");
+					}
+					
 					
 				}
 			}

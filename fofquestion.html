@@ -1,0 +1,233 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-blue.min.css" /> 
+
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<title>Fact or Fiction</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+.res {
+    float: left;  
+	width: 10%; 
+    text-align: center;
+	border-right-style: solid;
+	border-width: 1px;
+}
+
+.res2 {
+    float: left;  
+	width: 10%; 
+    text-align: center;
+}
+
+.rbox {
+    float: left; 
+	width: 100%; 
+}
+
+.btns {
+    float: left;
+	width: 100%; 
+}
+
+.btn {
+	float: left;
+	width: 50%;
+	padding:7px;
+}
+
+.fbtn {
+	float: left;
+	width: 100%;
+	padding: 7px;
+}
+
+.everything {
+	float: left;
+	width: 100%;
+	padding: 10px;
+
+}
+
+
+
+.mdl-card__title {
+  background: #ffc107;
+}
+</style>
+
+
+<script>
+$(document).ready(function(){
+	$(".fbtn").hide();
+	// Show first Fact/Fiction
+    $.ajax({
+  	  type: "POST",
+  	  url: "fofget.php" 
+  	}).done(function(results){
+  		var out=$.parseJSON(results);
+		$("#idsave").html(out.id);
+		$("#question").html(out.text);		
+		
+	});
+    
+    
+    // User pressed Fact, check his input
+    $("#fact").click(function(){
+        $.ajax({
+        	  type: "POST",
+        	  url: "fofcheck.php" ,
+        	  data: {id: $("#idsave").text(), answer: "1"}
+        	}).done(function (data) {
+        		//$("#result").html(data);
+        		
+        		// Display result
+        		if (data == "1") { // Correct answer
+        			var nr = $("#nrsave").html();
+        		
+        			$('#res' + nr).html("<i class=\"material-icons\">check</i>");
+        			$("#score").html(parseInt($("#score").html())+1);
+        			
+        		} else { // Wrong answer
+        		
+        			var nr = $("#nrsave").html();
+        			$('#res' + nr).html("<i class=\"material-icons\">error</i>");
+        			
+        		}
+        		
+        		if (nr >= 10) { // 10th question answered 
+        	  		$("#question").html("You achieved a score of "+parseInt($("#score").html())+" points.");
+        	  		$(".btn").hide();
+        	  		$(".fbtn").show();
+        		} else {
+        		
+	        		// Get new question
+	        	    $.ajax({
+	        	    	  type: "POST",
+	        	    	  url: "fofget.php" 
+	        	    	}).done(function(results){
+	        	    		var out=$.parseJSON(results);
+	        	  		$("#idsave").html(out.id);
+	        	  		$("#question").html(out.text);
+	        	  		$("#nrsave").html(parseInt($("#nrsave").html())+1);
+	        	  		
+	        	  	});
+        		}
+        	});
+    });
+    
+    // User pressed Fiction, check his input
+    $("#fict").click(function(){
+        $.ajax({
+        	  type: "POST",
+        	  url: "fofcheck.php",
+        	  data: {id: $("#idsave").text(), answer: "0"}
+        	}).done(function (data) {
+        		//$("#result").html(data);
+        		
+        		// Display result
+        		if (data == "1") { // Correct answer
+        			
+        			var nr = $("#nrsave").html();
+        			
+        			$('#res' + nr).html("<i class=\"material-icons\">check</i>");
+        			$("#score").html(parseInt($("#score").html())+1);
+        			
+        		} else { // Wrong answer
+        			
+        			var nr = $("#nrsave").html();
+        			$('#res' + nr).html("<i class=\"material-icons\">error</i>");
+        			
+        		}
+        		
+        		if (nr >= 10) { // 10th question answered
+        	  		$("#question").html("You achieved a score of "+parseInt($("#score").html())+" points.");
+        	  		$(".btn").hide();
+        	  		$(".fbtn").show();
+        		} else {
+        		
+	        		// Get new question
+	        	    $.ajax({
+	        	    	  type: "POST",
+	        	    	  url: "fofget.php" 
+	        	    	}).done(function(results){
+	        	    		var out=$.parseJSON(results);
+	        	  		$("#idsave").html(out.id);
+	        	  		$("#question").html(out.text);
+	        	  		$("#nrsave").html(parseInt($("#nrsave").html())+1);
+	        	  		
+	        	  	});
+        		}
+        	}); 
+    });
+    
+    $("#retry").click(function(){
+    	location.reload();
+    });
+});
+</script>
+
+
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96874758-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<div class="everything">
+<div class="mdl-card mdl-shadow--2dp" style="padding-bottom:3px;">
+	<div class="mdl-card__title">
+	<h4 class="mdl-card__title-text" style="white-space: pre-wrap;">#<span id="nrsave">1</span> Fact or Fiction - <span id="score">0</span>/10</h4>
+	</div>
+	
+	<div class="mdl-card__supporting-text" id="question" style="height:100px;"></div>
+	
+	<div class="btns mdl-card__actions mdl-card--border">
+	<div class="btn" style="padding-right:14px;"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="fact" style="float: right;">Fact</button></div>
+	<div class="btn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="fict" style="float: left;">Fiction</button></div>
+	<div class="fbtn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="retry" style="float: left;">Retry</button></div>
+	</div>
+	
+	<br>
+	
+	
+	<!-- Live results -->
+	<div class="rbox">
+	<div class="res">1<br><span id="res1"> </span></div>
+	<div class="res">2<br><span id="res2"> </span></div>
+	<div class="res">3<br><span id="res3"> </span></div>
+	<div class="res">4<br><span id="res4"> </span></div>
+	<div class="res">5<br><span id="res5"> </span></div>
+	<div class="res">6<br><span id="res6"> </span></div>
+	<div class="res">7<br><span id="res7"> </span></div>
+	<div class="res">8<br><span id="res8"> </span></div>
+	<div class="res">9<br><span id="res9"> </span></div>
+	<div class="res2">10<br><span id="res10"> </span></div>
+	</div>
+	
+	
+
+	<p hidden id="idsave"></p>
+
+</div>
+</div>
+</body>
+</html>

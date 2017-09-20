@@ -1,43 +1,25 @@
-<?php
-//Index page as a hub
-require '../backendnogit/db.php';
-session_start();
-
-// Restoring account if cookies are set
-if ($_SESSION['logged_in'] != 1) {
-	if (isset($_COOKIE['uhash']) and isset($_COOKIE['uid'])) { // Restorecookies are set
-		
-		// Check the cookies
-		$uid = $_COOKIE['uid'];
-		$uhash = $_COOKIE['uhash'];
-		
-		$sql = "SELECT * FROM users WHERE hash = '$uhash' AND id = '$uid'";
-		$result = $conn->query($sql);
-		
-		if ( $result->num_rows == 1 ){ // Cookies are correct, log in
-			$user = $result->fetch_assoc();
-			$_SESSION['email'] = $user['email'];
-			$_SESSION['username'] = $user['username'];
-			$_SESSION['votes'] = $user['votes'];
-			$_SESSION['logged_in'] = true;
-		}
-	}
-}
-?>
-
-<!DOCTYPE html>
 <html>
 <head>
 
-<meta charset="UTF-8"/>
-<title>Quote-Bot</title>
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css" />
+	
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<title>MS-Home</title>
+	
+	<style>
+		.buutn {
+		padding-left: 10px;
+		
+		}
+	</style>
 </head>
-
-
 <body>
-<!-- hello code digger. Visit http://quotebot.ddnsking.com/troll.php -->
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -48,73 +30,46 @@ if ($_SESSION['logged_in'] != 1) {
   ga('send', 'pageview');
 </script>
 
-<ul>
-	<li><a href="index.php" class="nactive">Home</a></li>
-	<li><a href="input.php" class="nav">Input</a></li>
-	<li><a href="repository.php" class="nav">Verzeichnis</a></li>
-	<li style="float: right;"><a href="account.php" class="nav">Account</a></li>
-</ul>
+	
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<!-- Title -->
+			<span class="mdl-layout-title">MS-Home</span>
+			<!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Navigation. We hide it in small screens. -->
+			<nav class="mdl-navigation mdl-layout--large-screen-only">
+				<a class="mdl-navigation__link" href="quotebot.php">Quotebot</a> 
+				<a class="mdl-navigation__link" href="matur.html">Maturbot</a> 
+				<a class="mdl-navigation__link" href="fofquestion.html">Fact or Fiction</a>
+			</nav>
+		</div>
+	</header>
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">MS-Home</span>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link" href="quotebot.php">Quotebot</a> 
+			<a class="mdl-navigation__link" href="matur.html">Maturbot</a> 
+			<a class="mdl-navigation__link" href="fofquestion.html">Fact or Fiction</a>
+		</nav>
+	</div>
+<main class="mdl-layout__content">
+
+<div class="page-content">
 
 
-<h2>Quote of the day</h2>
+	<h1>Welcome to MS-Home. Where do you want to go?</h1>
+	
+	<a href="/quotebot.php" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Quotebot</button></a> <br><br>
+	<a href="/matur.html" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Maturrobot</button></a><br><br>
+	<a href="/fofquestion.html" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Fact or Fiction</button></a>
+	
+	
 
-<?php
-
-// New random Quote every day
-
-// Get the quote count
-$sql = "SELECT * FROM quotes";
-$result = $conn->query($sql);
-$quote_cnt = $result->num_rows;
-
-// Chose a random Quote every day
-srand(date("Ymd")); // Seed the rand() function
-$wahl = rand(0, $quote_cnt);
-for ($x = 0; $x <= $wahl; $x++) {
-	$row = $result->fetch_assoc();
-}
-echo $row["name"]." ". $row["jahr"]." - ". $row["quote"]."<br>";
-
-
-// Preparing for statistics
-
-// Users
-$sql = "SELECT * FROM users";
-$result = $conn->query($sql);
-$user_cnt = $result->num_rows;
-
-// count quoted
-function getQuotesCount($qname) {
-	require '../backendnogit/db.php';
-	$sql = "SELECT * FROM quotes WHERE name='$qname'";
-	$result = $conn->query($sql);
-	$qrows = $result->num_rows;
-	return $qrows;
-}
-
-?>
-
-
-<h2>Statistiken</h2>
-<p>Anzahl Quotes: <?php echo $quote_cnt;?></p>
-<p>PHP Version: <?php  echo phpversion(); ?></p>
-<p>Registrierte Nutzer: <?php echo $user_cnt;?></p>
-<p>Anzahl Seviiquotes: <?php echo getQuotesCount("Sevii");?>
-<p>~800 Zeilen Code</p>
-<p>Current Version 1.3</p>
-
-<h2>News</h2>
-<p>24.04.17: Votesystem ist fertig</p>
-<p>23.04.17: Beginn der Arbeit am Votesystem</p>
-<p>20.04.17: Accountsystem ist fertig</p>
-<p>18.04.17: Encodings sind scheisse</p>
-
-<h2>Geplante features</h2>
-<p>Sortierung für Verzeichnis</p>
-<p>Quiz Minigame</p>
-
-<br><br>
-<p id="winfo">Mit dem weiteren Benutzen dieser Website stimmen Sie zu, dass Cookies gespeichert werden.</p>
+	
+</div>
+</main>
+</div>
 </body>
-
 </html>

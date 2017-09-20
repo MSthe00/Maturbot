@@ -1,0 +1,1 @@
+ssh ev3 "bash -s" <./scripts/goright.sh

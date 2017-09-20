@@ -41,19 +41,7 @@ if ($_POST['password'] != $_POST['password2']) {
 	
 	        $_SESSION['logged_in'] = true; // So we know the user has logged in
 	      
-	        // Try to send registration confirmation link (verify.php)
-	        $to      = $email;
-	        $subject = 'Quotebot Account Verifizierung';
-	        $message_body = '
-	        Hallo '.$username.',
-	
-	        Danke für deine Registrierung.
-	
-	        Mithilfe des folgenden Links kannst du deinen Account verifizieren:
-	
-	        http://quotebot.ddnsking.com/verify.php?email='.$email.'&hash='.$hash;  
-	
-	        mail( $to, $subject, $message_body );
+
 	        
 	        // User stays logged in if he wants
 	        $sql = "SELECT * FROM users WHERE username='$username'";
