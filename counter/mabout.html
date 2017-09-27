@@ -21,12 +21,12 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Zeilen Code'],
-          ['HTML',     372],
-          ['CSS',      42],
-          ['Javascript',  6],
-          ['Bash', 24],
-          ['PHP',    18]
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
         ]);
 
         var options = {
@@ -82,37 +82,33 @@
 
 <div class="mdl-grid">
 	
-	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 1 -->
+	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile"> <!-- Inhalt 1 -->
+		<div style="border: 1px solid red;">
 			<p>Halloy</p>
+		</div>
 	
 	</div>
 	
-	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 2 -->
+	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile"> <!-- Inhalt 1 -->
+		<div style="border: 1px solid red;">
 		
 			<h2>Der Roboter</h2>
-			<img src="b1.jpg" style="width: 70%; margin-left:auto; margin-right:auto;"/>
+			<img src="b1.jpg" style="width: 70%;"/>
 			<p>Der Roboter ist ein Lego EV3 Stein. Er wird jedoch nicht vom vorinstallierten Betriebssystem sondern mit <a href="http://www.ev3dev.org/">ev3dev</a> betrieben.
 			Dies ermöglicht die Steuerung über das Internet. Weiter wurde der Roboter mit einer Kamera in Form eines Samsung S4 ausgerüstet. Dieses streamt mithilfe der App 
 			<a href="https://play.google.com/store/apps/details?id=com.pas.webcam&hl=de">IP Webcam</a> eine Liveübertragung der Kamera.</p>
 			<br><br>
 			<h2>Die Objekte</h2>
 			<img src="b2.jpg" style="width: 70%;"/>
-			<p>Die zu transportierenden Objekte bestehen aus sechs klassischen 2x4 Legosteinen.</p>
+			<p>Die zu transportierenden Objekte bestehen aus sechs klassischen 2x4 Legosteinen</p>
+		</div>
 	
 	</div>
 	
-	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 3 -->
-			<h2>Programmierung</h2>
-			
+	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile"> <!-- Inhalt 1 -->
+		<div style="border: 1px solid red;">
 			<div id="piechart" style="width: 100%; height: 500px;"></div>
-			
-			<p>Zur Steuerung wurde eine vielzahl von Programmiersprachen verwendet. Zuerst wird dem Nutzer die Website in Form von HTML übertragen. 
-			Die Gestaltung wird von CSS übernommen, das dem Browser genau angibt, wie er das HTML darzustellen hat. Das design folgt hierbei den Material-Richtlinien von Google. 
-			Ausserdem wurde es sowohl für PCs als auch für Mobilgeräte optimiert. </p>
-			<p>Für die Steuerung selbst wird im ersten Schritt Javascript verwendet. Mithilfe einer Erweiterung (Fachsprache: Library) namens Jquery schikt der Browser eine
-			Anfrage für ein PHP-Script an den Server. Dies ist der letzte Schritt der im Browser selbst stattfindet.</p>
-			<p>Weiter geht es auf dem Server selbst. Das PHP-Script dient als Brücke und öffnet ein Bash-Script auf dem Raspberrypi. Dieses Bash-Script verbindet sich mit dem EV3 
-			Roboter und befiehlt ihm sich zu bewegen.</p>
+		</div>
 	
 	</div>
 	

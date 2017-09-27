@@ -59,7 +59,7 @@
 <div class="page-content">
 
 
-	<h1>Welcome to MS-Home. Where do you want to go?</h1>
+	<h1 class="buutn">Welcome to MS-Home. Where do you want to go?</h1>
 	
 	<a href="/quotebot.php" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Quotebot</button></a> <br><br>
 	<a href="/matur.html" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Maturrobot</button></a><br><br>
