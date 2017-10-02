@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css" />
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="maturcss.css">
-	
+	<meta name="theme-color" content="#3f51b5">	
 </head>
 <body>
 
@@ -61,7 +61,7 @@
 	<div class="lowhide"></div> <!-- Füller auf Desktop -->
 	
 	<div class="breit">
-		<div class="mdl-grid">
+		<div class="mdl-grid mdl-grid--no-spacing">
 		
 			<div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone tabletbreit"> <!-- Erste spalte auf Desktop, 25% Breite, volle breite auf mobile -->	
 			
@@ -75,7 +75,7 @@
 					<div class="mdl-card__supporting-text">
 					<p>
 						Herzlich Willkommen auf der Website zu meiner Maturaarbeit. Hier können Sie einiges über den Roboter und die Arbeit selber erfahren
-						und Sie können ihn sogar selber fernsteuern. Falls Sie ihn direkt verwenden wollen können Sie dies über den "Steuerung"-Tab tun. Viel Spass.
+						und Sie können ihn sogar selber fernsteuern. Falls Sie ihn direkt verwenden wollen, können Sie dies über den "Steuerung"-Tab tun. Viel Spass.
 					</p>
 					</div>
 					
@@ -100,7 +100,7 @@
 						Folgend sind einige Zahlen zu diesem Projekt aufgelistet. Für mehr Informationen und Statistiken können Sie den "Infos"-Tab verwenden.
 					</p>
 					<p>
-					Zeitaufwand: 34h
+					Zeitaufwand: 47h
 					</p>
 					<p>
 					Verwendete Programmiersprachen: 5
@@ -117,7 +117,7 @@
 					</div>
 					
 					<div class="mdl-card__actions mdl-card--border">
-						<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://maturbot.ddns.net/mabout.html">Zu den Infos</a>
+						<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://maturbot.ddns.net/mabout.html">Mehr Infos</a>
 					</div>
 				</div>
 				
@@ -128,8 +128,9 @@
 	
 			<div class="mdl-cell mdl-cell--8-col mdl-cell--hide-phone mdl-cell--hide-tablet tablethide mdl-shadow--2dp" style="padding: 10px;"> <!-- Zweite spalte auf Desktop, unsichtbar auf mobile -->
 				<h2 style="text-align: center">Liveübertragung des Roboters</h2>
-				<button id="strbtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="strStarten();" style="margin: auto;">Übertragung Starten</button>
-				<div id="strstart" style="width: 100%; height: 700px;"></div>
+				<div id="strstart" style="width: 100%; height: 700px;">
+					<button id="strbtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="strStarten();" style="margin-left:auto;margin-right:auto;">Übertragung Starten</button>
+				</div>
 			</div>
 	
 	
