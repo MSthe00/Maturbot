@@ -14,30 +14,7 @@
 	<meta name="theme-color" content="#3f51b5">	
 	
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>	
-	<script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Zeilen Code'],
-          ['HTML',     372],
-          ['CSS',      76],
-          ['Javascript',  6],
-          ['Bash', 24],
-          ['PHP',    18]
-        ]);
-
-        var options = {
-          title: 'Verwendete Programmiersprachen'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
+	
 </head>
 <body>
 
@@ -82,29 +59,33 @@
 
 <div class="mdl-grid">
 	
-	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 1 -->
-			<p>"Einleitung"</p>
+	<div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet"></div>
 	
-	</div>
-	
-	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 2 -->
-		
-			<h2>Der Roboter</h2>
-			<img src="b1.jpg" style="width: 70%; margin-left:auto; margin-right:auto;"/>
+	<div class="mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 2 -->
+			<div>
+			<h2>Roboter</h2>
+			<img src="b1g.jpg" style=" width: 40%; float: left; margin-right: 10px; margin-top: 5px;"/>
 			<p>Der Roboter ist ein Lego EV3 Stein. Er wird jedoch nicht vom vorinstallierten Betriebssystem sondern mit <a href="http://www.ev3dev.org/">ev3dev</a> betrieben.
 			Dies ermöglicht die Steuerung über das Internet. Weiter wurde der Roboter mit einer Kamera in Form eines Samsung S4 ausgerüstet. Dieses streamt mithilfe der App 
-			<a href="https://play.google.com/store/apps/details?id=com.pas.webcam&hl=de">IP Webcam</a> eine Liveübertragung der Kamera.</p>
+			<a href="https://play.google.com/store/apps/details?id=com.pas.webcam&hl=de">IP Webcam</a> eine Liveübertragung der Kamera. Bei jeder Bewegung vorwärts oder rückwärts, 
+			ist der Roboter eine halbe Sekunde in Bewegung. Dabei legt er einen Weg von .... Somit erreicht der Roboter eine Maximalgeschwindigkeit von ...</p>
+			</div>
+			
 			<br><br>
-			<h2>Die Objekte</h2>
-			<img src="b2.jpg" style="width: 70%;"/>
-			<p>Die zu transportierenden Objekte bestehen aus sechs klassischen 2x4 Legosteinen.</p>
-	
+			
+			<div>
+			<h2>Aufgabe</h2>
+			<img src="b2g.jpg" style=" width: 40%; float: left; margin-right: 10px; margin-top: 5px;"/>
+			<p>Die Aufgabe des Roboters besteht darin, die am Boden verteilten Legoklötze in einen Zielbereich zu bringen. Dazu nutzt der Roboter seinen Greifarm. Er kann mit diesem
+			die Klötze umarmen, um sie danach auf ebenem Grund frei bewegen zu können. Es können jeweils bis zu zwei Klötze gleichzeitig bewegt werden. Die ganze Aufgabe ist angelehnt an
+			ferngesteuerte Roboter, die in der echten Welt eingesetzt werden können. Einige Beispiele dafür wären Bombenentschärfer und Räumungsroboter nach Katastrophen. Solche Roboter
+			operieren oft auch mit einer Livekamera und einer Fernsteuerung. Die Fernsteuerung kann je nach Roboter jedoch sehr komplex ausfallen.</p>
+			</div>
 	</div>
 	
-	<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 3 -->
+	<div class="mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 3 -->
 			<h2>Programm</h2>
 			
-			<div id="piechart" style="width: 100%; height: 500px;"></div>
 			
 			<p>Zur Steuerung wurde eine vielzahl von Programmiersprachen verwendet. Zuerst wird dem Nutzer die Website in Form von HTML übertragen. 
 			Die Gestaltung wird von CSS übernommen, das dem Browser genau angibt, wie er das HTML darzustellen hat. Das design folgt hierbei den Material-Richtlinien von Google. 
@@ -116,6 +97,8 @@
 	
 	</div>
 	
+	<div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet"></div>
+
 </div>
 
 

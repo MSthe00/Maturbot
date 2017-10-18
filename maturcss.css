@@ -1,8 +1,8 @@
 .lowhide {
-	width: 13%;
+	display: none;
 }
 .breit {
-		width: 74%;
+		width: 100%;
 	}
 * {
     box-sizing: border-box;
@@ -25,6 +25,19 @@
 	margin-right:auto;
 }
 
+p {
+	font-size: 140%;
+}
+
+.karte {
+	width: 90%;
+}
+
+#strbtn {
+	height: 100%;
+	width: 100%;
+}
+
 @media only screen and (max-width: 840px) {
 
 	.video {
@@ -43,13 +56,7 @@
 
 @media only screen and (max-width: 1430px) {
 	
-	.lowhide {
-		display: none;
-	}
-	
-	.breit {
-		width: 100%;
-	}
+
 	
 	
 }
@@ -58,19 +65,7 @@
 
 @media only screen and (max-width: 1022px) {
 	
-	.lowhide {
-		display: none;
-	}
+
 	
-	.breit {
-		width: 100%;
-	}
-	
-	.tablethide {
-		display: none;
-	}
-	
-	.tabletbreit {
-		width: 100%;
-	}
+
 }

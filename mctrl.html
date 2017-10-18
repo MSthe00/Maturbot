@@ -19,17 +19,24 @@
 	
 	// Funktionen funktionieren erst wenn Dokument vollständig gelanden
 	$(document).ready(function(){
-	
 	    // Funktionen für Klicks auf Knöpfe auf der Website
-	    $("#fwd").click(function(){
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "forward.php" 
-	        	});    
+	    $("#fwd").on('mousedown', function() {
+	    	function fw() {
+		        $.ajax({
+		        	  type: "POST",
+		        	  url: "forward.php" 
+		        	});    
+				wait = setTimeout(fw, 2000);
+	    	}
+	    	fw();
+	    });
+	    
+	    $("#fwd").on('mouseup mouseleave', function() {
+	    	clearTimeout(wait);
 	    });
 	
 	    $("#bwd").click(function(){
-	        $.ajax({
+	        $.ajax({ 
 	        	  type: "POST",
 	        	  url: "backward.php"
 	        	});    
