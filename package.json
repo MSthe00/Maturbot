@@ -1,0 +1,23 @@
+{
+  "name": "maturbot",
+  "version": "1.0.0",
+  "description": "This is my code for a Website where you can add and manage quotes. It is built using MySQL, PHP, HTML, CSS and JS. It currently runs on a Apache2 Server on a RaspberryPi",
+  "main": "index.php",
+  "scripts": {
+    "test": "dir"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSthe00/Quotebot.git"
+  },
+  "author": "Marco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSthe00/Quotebot/issues"
+  },
+  "homepage": "https://github.com/MSthe00/Quotebot#readme",
+  "dependencies": {
+    "npm": "^5.5.1",
+    "websocket": "^1.0.24"
+  }
+}

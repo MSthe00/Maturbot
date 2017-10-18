@@ -15,112 +15,7 @@
 	
 	<!-- Javascript mit Jquery regelt Ajax anfragen an PHP -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	
-	// Funktionen funktionieren erst wenn Dokument vollständig gelanden
-	$(document).ready(function(){
-	    // Funktionen für Klicks auf Knöpfe auf der Website
-	    $("#fwd").on('mousedown', function() {
-	    	function fw() {
-		        $.ajax({
-		        	  type: "POST",
-		        	  url: "forward.php" 
-		        	});    
-				wait = setTimeout(fw, 2000);
-	    	}
-	    	fw();
-	    });
-	    
-	    $("#fwd").on('mouseup mouseleave', function() {
-	    	clearTimeout(wait);
-	    });
-	
-	    $("#bwd").click(function(){
-	        $.ajax({ 
-	        	  type: "POST",
-	        	  url: "backward.php"
-	        	});    
-	    });
-	
-	    $("#lft").click(function(){
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "left.php"
-	        	});    
-	    });
-	
-	    $("#rgt").click(function(){
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "right.php" 
-	        	});    
-	    });
-	
-	    $("#opn").click(function(){
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "open.php"
-	        	});    
-	    });
-	
-	    $("#cls").click(function(){
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "close.php"
-	        	});    
-	    });
-	
-	    // Funktionen für Tastatureingaben
-		$(document).keypress(function(k) {
-	        if ( k.keyCode === 119 ) // w
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "forward.php" 
-	        	});    
-	    });
-	
-		$(document).keypress(function(k) {
-	        if ( k.keyCode === 115 ) // s
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "backward.php"
-	        	});    
-	    });
-	
-		$(document).keypress(function(k) {
-	        if ( k.keyCode === 97 ) // a
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "left.php"
-	        	});    
-	    });
-	
-		$(document).keypress(function(k) {
-	        if ( k.keyCode === 100 ) // d
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "right.php" 
-	        	});    
-	    });
-	
-		$(document).keypress(function(k) {
-	        if ( k.keyCode === 113 ) // q
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "open.php"
-	        	});    
-	    });
-	
-		$(document).keypress(function(k) {
-	        if ( k.keyCode === 101 ) // e
-	        $.ajax({
-	        	  type: "POST",
-	        	  url: "close.php"
-	        	});    
-	    });
-	    
-	});
-	</script>
+	<script type="text/javascript" src="mclient.js"></script>
 	
 </head>
 <body>
@@ -164,7 +59,7 @@
 
 <div class="page-content">
 <div class="mdl-grid">
-	<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-phone mdl-shadow--2dp video" style="padding: 10px; overflow: hidden;">
+	<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-phone mdl-shadow--2dp video txtcntr" style="padding: 0px; overflow: hidden;">
 		<button id="strbtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="strStarten();" style="margin: auto;">Übertragung Starten</button>
 		<div id="strstart"></div>
 	</div>
@@ -177,53 +72,39 @@
 		<div class="mdl-grid mdl-grid--no-spacing">
 		
 			<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
-			
-				<!-- Header row -->
-				<div class="mdl-grid">
-					<div class="mdl-cell mdl-cell--12-col mdl-cell--hide-phone mdl-cell--hide-tablet"><h3>Bewegen</h3></div>
-				</div>
-				
+	
 				<!-- >controlls row -->
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--1-col-tablet"></div>
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--6-col-tablet txtcntr"><button id="fwd" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">keyboard_arrow_up</i></button></div>
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--1-col-tablet"></div>
 				</div>
-				
-				
+						
 				<!-- >controlls row 2-->	
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet txtcntr"><button id="lft" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">keyboard_arrow_left</i></button></div>
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--4-col-tablet txtcntr"><button id="bwd" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">keyboard_arrow_down</i></button></div>
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet txtcntr"><button id="rgt" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">keyboard_arrow_right</i></button></div>
 				</div>
+				
 		 	</div>
 		 	
 			<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
-				
-			
-			
-				<!-- >Header row -->
-				<div class="mdl-grid mdl-cell--hide-phone mdl-cell--hide-tablet">
-					<div class="mdl-cell mdl-cell--12-col"><h3>Greifer</h3></div>
-				</div>
-				
-				
+		
 				<!-- >controlls row 3-->	
 				<div class="mdl-grid">
-
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone txtcntr"><button id="opn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">arrow_back</i><i class="material-icons">arrow_forward</i></button></div>
-
-				</div>
-				
+				</div>	
 				
 				<!-- >controlls row 4-->	
 				<div class="mdl-grid">
-
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone txtcntr"><button id="cls" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">arrow_forward</i><i class="material-icons">arrow_back</i></button></div>
-
 				</div>
+				
 			</div>
+			
+			<div class="chat" id="messages"></div>
+			
 		</div>
 	
 	</div> 

@@ -13,7 +13,8 @@
 }
 
 .video {
-	height: 90vh;
+	height: calc((100vw - 16px)/2.37037);
+	padding: none;
 }
 
 .abcol {
@@ -38,34 +39,48 @@ p {
 	width: 100%;
 }
 
+.chat {
+	height: calc(100vh - 380px);
+	overflow-y: auto;
+	position: relative;
+	display: table-cell;
+	vertical-align: bottom;
+	width: 100%;
+	padding: 15px;
+}
+
+.chat2 {
+	height: 100px;
+	overflow-y: auto;
+	position: relative;
+	display: table-cell;
+	vertical-align: bottom;
+	width: 100%;
+	padding: 15px;
+}
+.inline {
+	display: inline-block;
+}
+
+.message {
+	margin: 1px 0px;
+	line-height: 2.2em;
+	overflow-y: auto;
+	max-height: 100%;
+}
+
+
+
+
+
 @media only screen and (max-width: 840px) {
 
 	.video {
-	height: 35vh;
+	height: calc((100vw - 32px)/1.77777);
 	}
 
-
-
+	.chat {
+	height: 100px;
 }
-
-	
-
-
-	
-
-
-@media only screen and (max-width: 1430px) {
-	
-
-	
-	
-}
-
-
-
-@media only screen and (max-width: 1022px) {
-	
-
-	
 
 }
