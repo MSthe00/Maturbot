@@ -1,6 +1,6 @@
 <html>
 <head>
-
+	<meta http-equiv="refresh" content="0; url=http://maturbot.ddns.net/matur.php" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
@@ -41,7 +41,7 @@
 			<!-- Navigation. We hide it in small screens. -->
 			<nav class="mdl-navigation mdl-layout--large-screen-only">
 				<a class="mdl-navigation__link" href="quotebot.php">Quotebot</a> 
-				<a class="mdl-navigation__link" href="matur.html">Maturbot</a> 
+				<a class="mdl-navigation__link" href="matur.php">Maturbot</a> 
 				<a class="mdl-navigation__link" href="fofquestion.html">Fact or Fiction</a>
 			</nav>
 		</div>
@@ -59,12 +59,12 @@
 <div class="page-content">
 
 
-	<h1 class="buutn">Welcome to MS-Home. Where do you want to go?</h1>
+	<h3 class="buutn">Welcome to MS-Home. Where do you want to go?</h3>
 	
 	<a href="/quotebot.php" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Quotebot</button></a> <br><br>
-	<a href="/matur.html" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Maturrobot</button></a><br><br>
+	<a href="/matur.php" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Maturrobot</button></a><br><br>
 	<a href="/fofquestion.html" class="buutn"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Take me to Fact or Fiction</button></a>
-	
+
 	
 
 	

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 	<title>Steuerung</title>
@@ -12,14 +11,11 @@
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="maturcss.css">
 	<meta name="theme-color" content="#3f51b5">
-	
 	<!-- Javascript mit Jquery regelt Ajax anfragen an PHP -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="mclient.js"></script>
-	
 </head>
 <body>
-
 <!-- Google Analytics um Informationen über die Nutzer zu sammeln -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -30,57 +26,52 @@
   ga('create', 'UA-96874758-1', 'auto');
   ga('send', 'pageview');
 </script>
-
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
+<!-- Navigation und Titel, Desktop und Mobile -->
 	<header class="mdl-layout__header">
 		<div class="mdl-layout__header-row">
-			<!-- Title -->
 			<span class="mdl-layout-title">Steuerung</span>
-			<!-- Add spacer, to align navigation to the right -->
 			<div class="mdl-layout-spacer"></div>
-			<!-- Navigation. We hide it in small screens. -->
 			<nav class="mdl-navigation mdl-layout--large-screen-only">
-				<a class="mdl-navigation__link" href="matur.html">Home</a> 
+				<a class="mdl-navigation__link" href="matur.php">Home</a> 
 				<a class="mdl-navigation__link" href="mctrl.html">Steuerung</a> 
 				<a class="mdl-navigation__link" href="mabout.html">Infos</a>
 			</nav>
 		</div>
 	</header>
+	<!-- Navigation auf mobile -->
 	<div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Steuerung</span>
     <nav class="mdl-navigation">
-	    <a class="mdl-navigation__link" href="matur.html">Home</a> 
+	    <a class="mdl-navigation__link" href="matur.php">Home</a> 
 		<a class="mdl-navigation__link" href="mctrl.html">Steuerung</a> 
 		<a class="mdl-navigation__link" href="mabout.html">Infos</a>
     </nav>
   </div>
-
 <main class="mdl-layout__content">
-
+<!-- Effektive Website beginnt hier -->
 <div class="page-content">
 <div class="mdl-grid">
 	<div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-phone mdl-shadow--2dp video txtcntr" style="padding: 0px; overflow: hidden;">
-		<button id="strbtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="strStarten();" style="margin: auto;">Übertragung Starten</button>
+		<button id="strbtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="strStarten();" style="margin: auto;"><p>Übertragung Starten</p></button>
 		<div id="strstart"></div>
+	
 	</div>
-
-
-
-	<!-- Controlls collom-->
+	<!-- Controlls Spalte-->
 	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-shadow--2dp">
 		
 		<div class="mdl-grid mdl-grid--no-spacing">
 		
 			<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
 	
-				<!-- >controlls row -->
+				<!-- >controlls Reihe -->
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--1-col-tablet"></div>
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--6-col-tablet txtcntr"><button id="fwd" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">keyboard_arrow_up</i></button></div>
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--1-col-tablet"></div>
 				</div>
 						
-				<!-- >controlls row 2-->	
+				<!-- >controlls Reihe 2-->	
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet txtcntr"><button id="lft" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">keyboard_arrow_left</i></button></div>
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--4-col-tablet txtcntr"><button id="bwd" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">keyboard_arrow_down</i></button></div>
@@ -91,26 +82,19 @@
 		 	
 			<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone">
 		
-				<!-- >controlls row 3-->	
+				<!-- >controlls Reihe 3-->	
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone txtcntr"><button id="opn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">arrow_back</i><i class="material-icons">arrow_forward</i></button></div>
 				</div>	
-				
-				<!-- >controlls row 4-->	
+			
+				<!-- >controlls Reihe 4-->	
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone txtcntr"><button id="cls" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">arrow_forward</i><i class="material-icons">arrow_back</i></button></div>
-				</div>
-				
-			</div>
-			
+				</div>		
+			</div>		
 			<div class="chat" id="messages"></div>
-			
-		</div>
-	
+		</div>	
 	</div> 
-
-
-
 </div>
 </div>
 </main>
@@ -118,11 +102,9 @@
 </body>
 <script type="text/javascript">
 function strStarten() {
-	
-	document.getElementById("strstart").innerHTML = "<iframe src=\"http://maturbot.ddns.net:8080/jsfs.html\" height=\"100%\" width=\"100%\" class=\"video\"></iframe>";
+	// Videos werden erst auf Knopfdruck geladen
+	document.getElementById("strstart").innerHTML = "<iframe src=\"http://maturbot.ddns.net:8090/jsfs.html\" height=\"100%\" width=\"100%\" class=\"video largeStream\"></iframe><iframe src=\"http://maturbot.ddns.net:8080/jsfs.html\" height=\"100%\" width=\"100%\" class=\"video smallStream\"></iframe>";
 	document.getElementById("strbtn").style.display = 'none';
 	}
 </script>
-</html>
-		
-		
+</html>		

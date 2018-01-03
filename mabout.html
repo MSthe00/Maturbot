@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 	<title>Infos</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
 	<!-- CSS resourcen importieren für design -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css" />
@@ -34,11 +32,9 @@
 		<div class="mdl-layout__header-row">
 			<!-- Title -->
 			<span class="mdl-layout-title">Infos</span>
-			<!-- Add spacer, to align navigation to the right -->
 			<div class="mdl-layout-spacer"></div>
-			<!-- Navigation. We hide it in small screens. -->
 			<nav class="mdl-navigation mdl-layout--large-screen-only">
-				<a class="mdl-navigation__link" href="matur.html">Home</a> 
+				<a class="mdl-navigation__link" href="matur.php">Home</a> 
 				<a class="mdl-navigation__link" href="mctrl.html">Steuerung</a> 
 				<a class="mdl-navigation__link" href="mabout.html">Infos</a>
 			</nav>
@@ -47,45 +43,40 @@
 	<div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Infos</span>
     <nav class="mdl-navigation">
-	    <a class="mdl-navigation__link" href="matur.html">Home</a> 
+	    <a class="mdl-navigation__link" href="matur.php">Home</a> 
 		<a class="mdl-navigation__link" href="mctrl.html">Steuerung</a> 
 		<a class="mdl-navigation__link" href="mabout.html">Infos</a>
     </nav>
   </div>
-
 <main class="mdl-layout__content">
-
 <div class="page-content">
-
-<div class="mdl-grid">
-	
+<div class="mdl-grid">	
 	<div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet"></div>
-	
 	<div class="mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 2 -->
-			<div>
+			<div style="display: inline-block"">
 			<h2>Roboter</h2>
-			<img src="b1g.jpg" style=" width: 40%; float: left; margin-right: 10px; margin-top: 5px;"/>
+			<img src="q.jpg" style=" width: 40%; float: left; margin-right: 10px; margin-top: 5px;"/>
 			<p>Der Roboter ist ein Lego EV3 Stein. Er wird jedoch nicht vom vorinstallierten Betriebssystem sondern mit <a href="http://www.ev3dev.org/">ev3dev</a> betrieben.
 			Dies ermöglicht die Steuerung über das Internet. Weiter wurde der Roboter mit einer Kamera in Form eines Samsung S4 ausgerüstet. Dieses streamt mithilfe der App 
 			<a href="https://play.google.com/store/apps/details?id=com.pas.webcam&hl=de">IP Webcam</a> eine Liveübertragung der Kamera. Bei jeder Bewegung vorwärts oder rückwärts, 
-			ist der Roboter eine halbe Sekunde in Bewegung. Dabei legt er einen Weg von .... Somit erreicht der Roboter eine Maximalgeschwindigkeit von ...</p>
-			</div>
-			
+			ist der Roboter eine halbe Sekunde in Bewegung. Wenn der Knopf gedrückt bleibt, bewegt sich der Roboter jede Sekunde.</p>
+			</div>			
 			<br><br>
-			
 			<div>
-			<h2>Aufgabe</h2>
-			<img src="b2g.jpg" style=" width: 40%; float: left; margin-right: 10px; margin-top: 5px;"/>
-			<p>Die Aufgabe des Roboters besteht darin, die am Boden verteilten Legoklötze in einen Zielbereich zu bringen. Dazu nutzt der Roboter seinen Greifarm. Er kann mit diesem
-			die Klötze umarmen, um sie danach auf ebenem Grund frei bewegen zu können. Es können jeweils bis zu zwei Klötze gleichzeitig bewegt werden. Die ganze Aufgabe ist angelehnt an
-			ferngesteuerte Roboter, die in der echten Welt eingesetzt werden können. Einige Beispiele dafür wären Bombenentschärfer und Räumungsroboter nach Katastrophen. Solche Roboter
-			operieren oft auch mit einer Livekamera und einer Fernsteuerung. Die Fernsteuerung kann je nach Roboter jedoch sehr komplex ausfallen.</p>
+			<h2>Fakten</h2>
+			<p>5 verwendete Programmiersprachen</p>
+			<p>über 600 Zeilen Code </p>
+			<p><0.5 Sekunden Verzögerung für die Steuerung</p>
+			<p>87/100 bei Google Pagespeed</p>
+			<p>Gesamte Website 80 kB</p>
+			<p>davon 63 kB Bilder</p>
+			<p>und 17 kB Code</p>
+			<p>Antwortezeit des Servers unter 500 ms</p>
 			</div>
 	</div>
-	
-	<div class="mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 3 -->
-			<h2>Programm</h2>
+	<div class="mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 3 -->	
 			
+			<h2>Programm</h2>		
 			
 			<p>Zur Steuerung wurde eine vielzahl von Programmiersprachen verwendet. Zuerst wird dem Nutzer die Website in Form von HTML übertragen. 
 			Die Gestaltung wird von CSS übernommen, das dem Browser genau angibt, wie er das HTML darzustellen hat. Das design folgt hierbei den Material-Richtlinien von Google. 
@@ -94,15 +85,9 @@
 			Anfrage für ein PHP-Script an den Server. Dies ist der letzte Schritt der im Browser selbst stattfindet.</p>
 			<p>Weiter geht es auf dem Server selbst. Das PHP-Script dient als Brücke und öffnet ein Bash-Script auf dem Raspberrypi. Dieses Bash-Script verbindet sich mit dem EV3 
 			Roboter und befiehlt ihm sich zu bewegen.</p>
-	
-	</div>
-	
+	</div>	
 	<div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet"></div>
-
 </div>
-
-
-
 </div>
 </main>
 </div>

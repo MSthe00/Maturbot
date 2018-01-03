@@ -39,7 +39,7 @@ wsServer.on("request", (request) => {
 	});
 
 	function onMessage(data) {
-		if (data.type !== "utf8") {
+		if (data.type !== "utf8") { // Falsches Format der Daten wird abgelehnt
 			return;
 		}
 
@@ -58,7 +58,6 @@ function addUser(connection) {
 	const index = clients.length;
 	const user = new User(index, connection)
 	clients.push(user);
-
 	return user;
 }
 
@@ -67,9 +66,9 @@ function deleteUser(user) {
 		log("No user specified.");
 		return;
 	}
-
+	
 	const index = clients.indexOf(user);
-
+	log(index);
 	if (index > -1) {
 		clients.splice(index, 1);
 	} else {
@@ -93,10 +92,10 @@ function sendToAllUsers(data) {
 
 function addToHistory(message) {
 	history.push(message);
-	history = history.slice(-MESSAGE_BUFFER_SIZE);
+	history = history.slice(-MESSAGE_BUFFER_SIZE); // Chat hat Maximallänge
 }
 
-function serializeMessage(message) {
+function serializeMessage(message) { // Serialisiert die JSON Nachricht
 	const json = JSON.stringify({ 
 		type: "message", 
 		data: message

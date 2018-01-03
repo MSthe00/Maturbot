@@ -14,7 +14,7 @@ $(() => {
 	window.WebSocket = window.WebSocket || window.MozWebSocket;
 
 	if (!window.WebSocket) {
-		console.error("Your browser doesn't seem to support WebSockets");
+		console.error("Ihr Browser unterstützt Websocket nicht!");
 		return;
 	}
 
@@ -50,7 +50,7 @@ $(() => {
 	}
 
 	function handleError(error) {
-		console.error("Connection could not be established.");
+		console.error("Verbindung fehlgeschlagen.");
 	}
 
 	function handleMessage(res) {
@@ -59,19 +59,21 @@ $(() => {
 		try {
 			message = JSON.parse(res.data);
 		} catch (e) {
-			console.log("Invalid JSON: ", res.data);
+			console.log("Invalides JSON: ", res.data);
 			return;
 		}
 
 		const data = message.data;
 		console.log("data:", data);
 
-		if (message.type === "history") { 
+		if (message.type === "history") { // Anfrage für Gesamtverlauf
 			for (let i = 0; i < data.length; i++) {
 				addMessage(data[i].author, data[i].color, data[i].text, data[i].time);
+				var element = document.getElementById("messages");
+				element.scrollTop = element.scrollHeight;
 			}
 			
-		} else if (message.type === "message") {
+		} else if (message.type === "message") { // Anfrage für einzelne Nachricht
 			addMessage(data.author, data.color, data.text, data.time);
 			var element = document.getElementById("messages");
 			element.scrollTop = element.scrollHeight;
