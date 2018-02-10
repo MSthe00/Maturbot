@@ -34,18 +34,18 @@
 			<span class="mdl-layout-title">Infos</span>
 			<div class="mdl-layout-spacer"></div>
 			<nav class="mdl-navigation mdl-layout--large-screen-only">
-				<a class="mdl-navigation__link" href="matur.php">Home</a> 
+				<a class="mdl-navigation__link" href="matur.html">Home</a> 
 				<a class="mdl-navigation__link" href="mctrl.html">Steuerung</a> 
-				<a class="mdl-navigation__link" href="mabout.html">Infos</a>
+				<a class="mdl-navigation__link" href="mabout.php">Infos</a>
 			</nav>
 		</div>
 	</header>
 	<div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Infos</span>
     <nav class="mdl-navigation">
-	    <a class="mdl-navigation__link" href="matur.php">Home</a> 
+	    <a class="mdl-navigation__link" href="matur.html">Home</a> 
 		<a class="mdl-navigation__link" href="mctrl.html">Steuerung</a> 
-		<a class="mdl-navigation__link" href="mabout.html">Infos</a>
+		<a class="mdl-navigation__link" href="mabout.php">Infos</a>
     </nav>
   </div>
 <main class="mdl-layout__content">
@@ -64,6 +64,15 @@
 			<br><br>
 			<div>
 			<h2>Fakten</h2>
+			<p><?php 
+
+				require '../backendnogit/db.php';
+				$sql = "SELECT * FROM counter";
+				$result = $conn->query($sql);
+				$move_cnt = $result->num_rows;
+				echo $move_cnt;
+				
+				?> bisherige Bewegungen</p>	
 			<p>5 verwendete Programmiersprachen</p>
 			<p>über 600 Zeilen Code </p>
 			<p><0.5 Sekunden Verzögerung für die Steuerung</p>
@@ -72,6 +81,8 @@
 			<p>davon 63 kB Bilder</p>
 			<p>und 17 kB Code</p>
 			<p>Antwortezeit des Servers unter 500 ms</p>
+			<p>Über 8400 km Entfernung gesteuert</p>
+			<p>Verzögerung nach Seattle: 5 sek</p>
 			</div>
 	</div>
 	<div class="mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-col-mobile mdl-shadow--2dp abcol"> <!-- Inhalt 3 -->	
@@ -81,7 +92,7 @@
 			<p>Zur Steuerung wurde eine vielzahl von Programmiersprachen verwendet. Zuerst wird dem Nutzer die Website in Form von HTML übertragen. 
 			Die Gestaltung wird von CSS übernommen, das dem Browser genau angibt, wie er das HTML darzustellen hat. Das design folgt hierbei den Material-Richtlinien von Google. 
 			Ausserdem wurde es sowohl für PCs als auch für Mobilgeräte optimiert. </p>
-			<p>Für die Steuerung selbst wird im ersten Schritt Javascript verwendet. Mithilfe einer Erweiterung (Fachsprache: Library) namens Jquery schikt der Browser eine
+			<p>Für die Steuerung selbst wird im ersten Schritt Javascript verwendet. Mithilfe einer Library namens Jquery schickt der Browser eine
 			Anfrage für ein PHP-Script an den Server. Dies ist der letzte Schritt der im Browser selbst stattfindet.</p>
 			<p>Weiter geht es auf dem Server selbst. Das PHP-Script dient als Brücke und öffnet ein Bash-Script auf dem Raspberrypi. Dieses Bash-Script verbindet sich mit dem EV3 
 			Roboter und befiehlt ihm sich zu bewegen.</p>

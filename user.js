@@ -30,9 +30,9 @@ const COLORS = [
 	"green",
 	"blue",
 	"magenta",
-	"purple",
 	"plum",
-	"orange"
+	"orange",
+	"fuchsia"
 ].sort((a, b) => Math.random() > 0.5);
 
 

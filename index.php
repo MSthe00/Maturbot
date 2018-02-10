@@ -1,6 +1,6 @@
 <html>
 <head>
-	<meta http-equiv="refresh" content="0; url=http://maturbot.ddns.net/matur.php" />
+	<meta http-equiv="refresh" content="0; url=http://maturbot.ddns.net/matur.html" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	

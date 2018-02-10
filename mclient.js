@@ -3,7 +3,7 @@ $(() => {
 	const input = $("#messages");
 
 	const MESSAGES = {
-		MOVED_FORWARD: "hat den Roboter forwärts bewegt.",
+		MOVED_FORWARD: "hat den Roboter vorwärts bewegt.",
 		MOVED_BACKWARD: "hat den Roboter rückwärts bewegt.",
 		MOVED_LEFT: "hat den Roboter nach links bewegt.",
 		MOVED_RIGHT: "hat den Roboter nach rechts bewegt.",

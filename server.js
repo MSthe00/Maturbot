@@ -54,14 +54,14 @@ wsServer.on("request", (request) => {
 	}
 });
 
-function addUser(connection) {
+function addUser(connection) { // Fügt neuen Nutzer hinzu
 	const index = clients.length;
 	const user = new User(index, connection)
 	clients.push(user);
 	return user;
 }
 
-function deleteUser(user) {
+function deleteUser(user) { // Löscht Nutzer
 	if (!user) {
 		log("No user specified.");
 		return;
@@ -76,11 +76,11 @@ function deleteUser(user) {
 	}
 }
 
-function log(message) {
+function log(message) { // Konsolenlog erleichtert debugging
 	console.log(`[${new Date().toLocaleTimeString()}] ${message}`)
 }
 
-function sendHistoryToUser(user, history) {
+function sendHistoryToUser(user, history) { // bisherige Nachrichten werden gesendet
 	user.connection.sendUTF(JSON.stringify({ type: "history", data: history }));
 }
 
