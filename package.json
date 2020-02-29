@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/MSthe00/Quotebot#readme",
   "dependencies": {
-    "npm": "^5.5.1",
+    "npm": "^6.13.4",
     "websocket": "^1.0.24"
   }
 }
